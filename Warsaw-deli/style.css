@@ -1,0 +1,476 @@
+/* *{
+    box-sizing: border-box;
+    font-family: aptly, sans-serif;
+    line-height:1.4em
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+}
+  
+  
+  nav{
+    display: flex;
+    background-color: #e22835;
+  }
+
+nav a {
+    color: #f6f5ed;
+    text-decoration: none;
+} */
+
+/*////////////////////////////////////////////////// general /////////////////////////*/
+
+:root {
+    --red: #E22835;
+    --white: #F6F5ED;
+    --black: #1d1a1a;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    border-box: box-sizing;
+  }
+  
+  body {
+    background-color: whitesmoke;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  h2{
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  h3{
+    font-family: 'aptly';
+    font-size: 64px;
+    color: var(--red);
+    text-decoration-line: underline;
+    text-decoration-style:wavy ;
+    margin-bottom: .3em;
+  }
+
+  p{
+    color: var(--black);
+    font-family: 'montserrat';
+    font-size: 24px;
+    line-height: 1.4em;
+    margin-bottom: .5em;
+  }
+
+  hr{
+    color: var(--white);
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20em;  
+  }
+
+  /*////////////////////////////////////////////////// shadows /////////////////////////*/
+
+  .shdw{
+    border-radius: 8px;
+    outline: 6px solid var(--black);
+    box-shadow: 7px 7px var(--black);
+  }
+
+  .shdw-inv{
+    border-radius: 8px;
+    outline: 4px solid var(--white);
+    box-shadow: 7px 7px var(--white);
+  }
+
+  .shdw-m{
+    border-radius: 15px;
+    outline: 6px solid var(--black);
+    box-shadow: 12px 12px var(--black);
+  }
+
+  .und{
+    transition: ease-in-out 300ms;
+  }
+  
+  .und:hover{
+    text-decoration: underline;
+
+  }
+
+  
+
+  /*////////////////////////////////////////////////// nav /////////////////////////*/
+
+  .container {
+    background-color: var(--red);
+    font-size: 1.2rem;
+    font-family: aptly, sans-serif;
+    height: 70px;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .navbar ul {
+    display: flex;
+  }
+  
+  .container .navbar {
+    justify-content: space-between;
+  }
+  
+  .navbar ul li {
+    list-style-type: none;
+    font-size: 32px;
+    font-weight: 300;
+  }
+  
+  .container .navbar ul li {
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  .navbar  {
+    color: var(--white);
+    font-weight: bold;
+  }
+
+
+  /*////////////////////////////////////////////////// button /////////////////////////*/
+
+  .btn{
+    font-family: 'montserrat';
+    color: var(--white);
+    font-size: 40px;
+    padding: 5px 20px;
+    background-color: var(--red);
+  }
+
+  .btn-2{
+    font-family: 'montserrat';
+    color: var(--white);
+    font-size: 25px;
+    padding: 5px 40px;
+    background-color: var(--red);
+    transition:  all 200ms ease-in-out;
+  }
+
+  .btn:hover{
+    transform: scale(1.4);
+  }
+  
+  .btn-2:hover{
+    transform: scale(1.2);
+  }
+
+  .btn:hover{
+    transform: scale(1.2);
+  }
+
+  .hv:hover{
+    transform: scale(1.2);
+  }
+
+/*////////////////////////////////////////////////// hero /////////////////////////*/
+
+  .hero {
+	display: grid;
+	min-height: 75vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	animation: slideshow 18s ease-in-out infinite;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.hero::before {
+	animation-delay: -9s;
+}
+
+@keyframes slideshow {
+	0%,
+	25% {
+		opacity: 1;
+		background-image: url("https://assets.codepen.io/18050/pexels-anton-porsche-37909-133578.jpg");
+	}
+	33.33%,
+	58.33% {
+		opacity: 1;
+		background-image: url("https://assets.codepen.io/18050/pexels-postiglioni-947174.jpg");
+	}
+	66.66%,
+	91.66% {
+		opacity: 1;
+		background-image: url("https://assets.codepen.io/18050/pexels-rachel-claire-5531293.jpg");
+	}
+	100% {
+		opacity: 1;
+		background-image: url("https://assets.codepen.io/18050/pexels-anton-porsche-37909-133578.jpg");
+	}
+}
+
+.herocontent {
+    /* max-width: 80%;
+    margin: 0; */
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	align-self: end;
+	position: relative;
+	z-index: 2;
+	background-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.9) 0%,
+		rgba(0, 0, 0, 0.8) 20%,
+		rgba(0, 0, 0, 0.7) 40%,
+		rgba(0, 0, 0, 0.6) 60%,
+		rgba(0, 0, 0, 0.3) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.herocontent h1{
+    font-family: 'aptly';
+    font-size: 64px;
+}
+
+
+
+.herocontent h1,
+.herocontent p {
+	margin: 0;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+/*////////////////////////////////////////////////// 3imgs /////////////////////////*/
+
+.img-sect{
+    display: flex;
+    justify-content: space-around;
+    background: var(--red);
+    padding: 4rem;
+
+}
+
+.img-sect img{
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+}
+  
+/*////////////////////////////////////////////////// main /////////////////////////*/
+.img-r{
+    display: flex;
+    gap: 4em;
+    padding: 3em 4em;
+    /* height: 60vh; */
+    justify-content: space-evenly;
+}
+
+.img-r img{
+    width: 700px;
+    object-fit: cover;
+}
+
+.img-r .story-content{
+    max-width: 40%;
+}
+
+.img-l{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4em;
+    padding: 3em 4em;
+    /* height: 60vh; */
+    justify-content: space-evenly;
+}
+
+/* .img-l a { 
+    display: inline-block; 
+    text-align: ; 
+  } */
+
+.img-l img{
+    width: 700px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.img-l p{
+    font-size: 36px;
+}
+/*////////////////////////////////////////////////// footer /////////////////////////*/
+ .footer{
+    background-color: var(--black);
+ }
+
+ .footer-container{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+ }
+
+ .footer-container img{ 
+    width: 20%;
+ }
+
+ .footer-info p{
+    color: var(--white);
+    z-index: 4;
+ }
+ 
+ .footer-btn{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+ }
+
+ .showsmall{
+  color: var(--white);
+  display: none;
+ }
+
+/*////////////////////////////////////////////////// filler page /////////////////////////*/
+
+.nope{
+  width: 100%;
+  height: 50vh;
+}
+
+.nope img{
+  width: 100%;
+  object-fit: cover;
+}
+
+  /* Responsive section for small screen like mobile devices */
+  
+  @media screen and (min-width: 390px) and (max-width: 767px) {
+    .container {
+      height: 100%;
+    }
+  
+    .container .navbar {
+      flex-direction: column;
+    }
+
+    .navbar ul li{
+        font-size: 28px;
+    }
+
+    .herocontent{
+        text-align: center;
+    }
+
+    .herocontent h1{ 
+        font-size: 43px;
+    }
+
+    .img-sect{
+        display: flex;
+        justify-content: space-between;
+        background: var(--red);
+        padding: 1.2rem;
+    
+    }
+    
+    .img-sect img{
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+    }
+
+    .img-r{
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .img-r img {
+        width: 90%;
+
+    }
+
+    .img-r .story-content{
+        max-width: 90%;
+        /* text-align: ; */
+        
+        /* margin: ; */
+    }
+
+    .img-l{
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .img-l img {
+        width: 90%;
+        height: 50vh;
+        margin-bottom: 2em;
+    }
+
+    .img-l .story-content{
+        max-width: 90%;
+        text-align: left;
+        /* margin: ; */
+    }
+
+    .img-l .story-content h3{
+      font-size: 48px;
+  }
+
+  .img-l .story-content p{
+    font-size: 30px;
+}
+
+    .footer-container{
+      flex-direction: column-reverse;
+      padding-top: 1em ;
+    }
+
+    .footer-info{
+      margin: 2em;
+      font-size: 8px;
+    }
+
+    .showbig{
+      display: none;
+    }
+
+    .showsmall{
+      display: block;
+      font-family: 'aptly';
+      font-size: 60px;
+      /* font-weight: 00px; */
+      margin: 1em 0 2em 0 ;
+    }
+
+  }
