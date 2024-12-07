@@ -64,7 +64,7 @@ nav a {
     color: var(--black);
     font-family: 'montserrat';
     font-size: 24px;
-    line-height: 1.4em;
+    line-height: 1.7em;
     margin-bottom: .5em;
   }
 
@@ -157,6 +157,7 @@ nav a {
     font-size: 40px;
     padding: 5px 20px;
     background-color: var(--red);
+    margin-top: 2em;
   }
 
   .btn-2{
